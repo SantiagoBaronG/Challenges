@@ -1,0 +1,57 @@
+<meta charset="UTF-8">
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <title class="titulo">Encriptador Online</title>
+</head>
+<body>
+    <img src="images/top-circle.svg" class="circle circletop">
+    <img src="images/top-circle.svg" class="circle circlebottom">
+    <article class="cuadro_contenido">
+        <div class="contenido"></div>
+        <header>
+            <img src="images/card-pattern.svg" class="img_cuadro">
+            <h1 class="titulo">Encriptador Online</h1>
+        </header>
+        <main>
+                <p>Escriba el texto que desee Encriptar:</p>
+                <input class="input_contraseña"/>
+                <button class="boton">Encriptar</button>
+                <div class="resultado">
+            </div>
+        </main>
+    </div>
+    </article>
+<script>
+
+function saltarLinea (){
+	document.write("<br>")
+}
+function imprimir (frase) {
+	document.write(frase)
+	saltarLinea()
+}
+var input = document.querySelector("input");
+input.value = "";
+var button = document.querySelector("button");
+button.onclick = CambiarCaracter;
+input.focus()
+function aleatorio (){
+	return(Math.floor(Math.random()*26)+ 65);
+	}
+    function CambiarCaracter () {
+    var letra = input.value; 
+    var resultado = "";
+    for(var p = 0; p < letra.length; p++){
+        var codigo = aleatorio(); // genera un número aleatorio para cada carácter en la cadena
+        var nuevaLetra = String.fromCharCode(codigo); // genera una letra aleatoria a partir del número aleatorio generado
+        resultado += nuevaLetra; // concatena la nueva letra al resultado
+    }
+    imprimir("Su contraseña encriptada es: "+ resultado); // imprime el resultado en la página
+}
+
+</script>
+</body>
