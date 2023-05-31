@@ -5,7 +5,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <title class="titulo">Encriptador Online</title>
+    <title class="titulo">Encriptador Awil</title>
 </head>
 <body>
     <img src="images/top-circle.svg" class="circle circletop">
@@ -14,29 +14,23 @@
         <div class="contenido"></div>
         <header>
             <img src="images/card-pattern.svg" class="img_cuadro">
-            <h1 class="titulo">Encriptador Online</h1>
+            <h1 class="titulo">Encriptador</h1>
         </header>
         <main>
                 <p>Escriba el texto que desee Encriptar:</p>
-                <input class="input_contraseña"/>
+                <input type="password"class="input_contraseña"/>
                 <button class="boton">Encriptar</button>
-                <div class="resultado">
-            </div>
+                <p class="resultado"></p>
+                <div class="funcion_desencriptar"></div>
         </main>
-    </div>
     </article>
 <script>
 
-function saltarLinea (){
-	document.write("<br>")
-}
-function imprimir (frase) {
-	document.write(frase)
-	saltarLinea()
-}
-var input = document.querySelector("input");
+var bulean = false
+var input = document.querySelector(".input_contraseña");
 input.value = "";
-var button = document.querySelector("button");
+var Texto = input.value
+var button = document.querySelector(".boton");
 button.onclick = CambiarCaracter;
 input.focus()
 function aleatorio (){
@@ -50,8 +44,32 @@ function aleatorio (){
         var nuevaLetra = String.fromCharCode(codigo); // genera una letra aleatoria a partir del número aleatorio generado
         resultado += nuevaLetra; // concatena la nueva letra al resultado
     }
-    imprimir("Su contraseña encriptada es: "+ resultado); // imprime el resultado en la página
-}
-
+    var pResultado= document.querySelector(".resultado")
+    pResultado.textContent ="Usted escribio "+ resultado;
+    Texto = input.value
+    input.value="";
+    if (resultado == ""){
+        pResultado.textContent= "Porfavor escriba un valor aceptable para encriptar"
+        Texto="";
+    }
+    if(!bulean){
+    var button_desencriptar = document.createElement("button")
+        button_desencriptar.textContent= "Desencriptar"
+        button_desencriptar.className = "boton";
+        var desencriptar = document.querySelector(".funcion_desencriptar")
+            desencriptar.appendChild (button_desencriptar);
+            button_desencriptar.onclick = function TextoDesencriptado(){
+            pResultado.textContent="Su texto anterior era "+ Texto;
+                if (Texto ==""){
+                pResultado.textContent= "Porfavor escriba un valor aceptable para desencriptar"
+                }
+    Texto = "";
+            }
+    bulean = true
+    }
+    input.focus;
+    }
+    var button = document.querySelector("button");
+    button.onclick = CambiarCaracter;
 </script>
 </body>

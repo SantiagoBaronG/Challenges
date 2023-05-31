@@ -39,11 +39,11 @@ body{
     border-bottom: 2px solid #000000;
 }
 .titulo{
-    margin-top: -31px;
-    font-size: 35px;
+    margin-top: -70px;
+    font-size: 40px;
     font-weight: bold;
-    padding-bottom: 20px;
-
+    padding-bottom: 0px;
+    color:#FFFFFF;
 }
 .input_contraseña{
     display: block;
@@ -61,4 +61,33 @@ body{
     background-color: hsl(185, 75%, 39%);
     border: none;
     border-radius: 15px;
+}
+.boton:hover{
+    background-color:hsl(185, 100%, 31%) ;
+}
+.boton:active{
+    background-color:hsl(185, 91%, 40%);
+}
+.resultado{
+    display: block;
+    color:#000000;
+    text-align: center;
+    margin: 0 auto;
+}
+.buttonDesencriptar{
+    width: 40%;
+    margin:10px 0;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight:bold;
+    color:#FFFFFF;
+    background-color: hsl(0, 75%, 39%);
+    border: none;
+    border-radius: 15px;
+}
+.buttonDesencriptar:hover{
+    background-color: hsl(0, 68%, 30%);
+}
+.buttonDesencriptar:active{
+    background-color: hsla(0, 75%, 39%, 0.692);
 }
